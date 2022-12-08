@@ -1,0 +1,73 @@
+# database
+Docker all databases 
+1. MySQL
+2. MongoDB
+3. Postgres
+4. Redis
+5. ElasticSearch
+## Tooles
+1. phpmyadmin
+2. adminer
+3. pgadmin
+4. kibana
+## Portes
+ 1. 5432
+ 2. 5050
+ 3. 3306
+ 4. 27017
+ 5. 6379
+ 6. 90
+ 7. 60
+ 8. 5601
+ 9. 9200
+## networks
+```docker
+networks:
+  aminnet:
+    external: true
+```
+## Init
+```bash
+_>npm run up
+```
+#### OR
+```bash
+_>docker-compose build && docker-compose up -d
+```
+
+## Remove
+```bash
+_>npm run down
+```
+#### OR
+```bash
+_> docker-compose down
+```
+## Start
+```bash
+_>npm run start
+```
+#### OR
+```bash
+_>docker-compose start
+```
+## Stop
+```bash
+_>npm run stop
+```
+#### OR
+```bash
+_>docker-compose stop
+```
+
+## Restart
+```bash
+_>npm run restart
+```
+#### OR
+```bash
+_>docker-compose restart
+```
+
+## Author
+Amin Soltani Tehrani <asoltani927@gmail.com , virasepehr@gmail.com>

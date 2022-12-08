@@ -1,0 +1,46 @@
+version: '3.5'
+
+services:
+  # Jira Software Docker Images: https://hub.docker.com/r/atlassian/jira-software
+  jira:
+    image: atlassian/jira-software
+    container_name: jira
+    environment:      
+      - 'ATL_JDBC_URL=jdbc:postgresql://172.25.0.2/jira'
+      - 'ATL_JDBC_USER=postgres'
+      - 'ATL_JDBC_PASSWORD=1234'
+      - 'ATL_DB_DRIVER=org.postgresql.Driver'
+      - 'ATL_DB_TYPE=postgres72'
+      - 'ATL_TOMCAT_CONTEXTPATH=/'
+      # - 'ATL_JDBC_URL=jdbc:mysql://172.25.0.5:3306/jiradb'
+      # - 'ATL_JDBC_USER=root'
+      # - 'ATL_JDBC_PASSWORD=amin@Mysql'
+      # - 'ATL_DB_DRIVER=com.mysql.jdbc.Driver'
+      # - 'ATL_DB_TYPE=mysql8'
+      # - 'ATL_TOMCAT_CONTEXTPATH=/'
+      # - 'ATL_DB_SCHEMA_NAME=jiradb'
+      # - 'ATL_TOMCAT_SCHEME=https'
+      # - 'ATL_TOMCAT_SECURE=true'
+      # - 'ATL_TOMCAT_PORT=8100'
+      # - 'ATL_PROXY_NAME=jira.virasepehr.com'
+      # - 'ATL_PROXY_PORT=443'
+
+    ports:
+      - 70:8080
+    networks:
+      - aminnet
+    # volumes:
+    #     - jira-data:/var/atlassian-data/jira
+
+networks:
+  aminnet:
+    external: true
+
+volumes:
+  elasticsearch-data:
+    driver: local
+  db_mysql: {}
+  db_mongo: {}
+  db_post: {}
+  db_redis: {}
+  db_pgadmin: {}
